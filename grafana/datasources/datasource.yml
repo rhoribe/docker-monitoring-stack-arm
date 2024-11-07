@@ -1,0 +1,29 @@
+apiVersion: 1
+
+datasources:
+
+  - name: prometheus
+    type: prometheus
+    uid: prometheus
+    url: http://prometheus.mon:9090 
+    isDefault: true
+    orgId: 1
+    access: proxy
+    editable: true
+    basicAuth: false
+    version: 1
+    jsonData:
+      httpMethod: GET
+  
+
+  - name: loki
+    type: loki
+    access: proxy 
+    orgId: 1
+    url: http://loki.mon:3100
+    basicAuth: false
+    isDefault: false
+    version: 1
+    editable: true
+    uid: loki
+    apiVersion: 1
